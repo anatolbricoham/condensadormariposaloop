@@ -135,6 +135,14 @@ Tiendas y talleres en Murcia: [`docs/materiales_murcia.md`](docs/materiales_murc
 - La tensión práctica sigue el criterio de TA2WK (≈1–1,2 kV/mm). Humedad, polvo y rebabas la reducen.
 - **Peligro: alta tensión RF (varios kV).** Lee la sección de seguridad de [`docs/montaje.md`](docs/montaje.md).
 
+## Publicar / clonar
+
+```bash
+git clone https://github.com/TU_USUARIO/condensador-mariposa-loop.git
+```
+
+Para publicar tu copia: crea un repositorio vacío en GitHub y ejecuta `sh publicar.sh URL` (o `publicar.bat URL` en Windows).
+
 ## Créditos y licencia
 
 - Diseño original y tabla de referencia: TA2WK. Modelo de cálculo, planos y documentación: este repositorio.

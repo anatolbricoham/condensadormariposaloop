@@ -1,8 +1,13 @@
-# Condensador mariposa de alta tensión para antena loop magnética (DIY)
+# Loop magnética con condensador mariposa motorizado y autoajuste (DIY)
 
-Cálculo completo, planos de corte láser (DXF/SVG) y guía de construcción de un **condensador
-variable de aire tipo mariposa (butterfly)** para antenas **loop magnéticas de HF**, con la lista
-de materiales y **dónde conseguirlos en Murcia**.
+Cálculo completo, planos de corte láser (DXF/SVG), **piezas imprimibles en 3D (STL + OpenSCAD)**,
+**firmware de autoajuste para ESP32** y guía de construcción de un **condensador variable de aire
+tipo mariposa (butterfly)** para antenas **loop magnéticas de HF**, con la lista de materiales y
+**dónde conseguirlos en Murcia**.
+
+> 👉 **Empieza por la [guía paso a paso](docs/guia_paso_a_paso.md).**
+
+![Antena completa](docs/img/antena_conjunto.png)
 
 Basado en el artículo de **TA2WK** –
 [High-Voltage DIY Air Capacitor for Magnetic Loop Antennas](https://www.ta2wk.com/high-voltage-diy-air-capacitor-for-magnetic-loop-antennas/)
@@ -10,6 +15,7 @@ Basado en el artículo de **TA2WK** –
 ([YouTube](https://www.youtube.com/watch?v=iPEKQIZHf5k&list=PLLFrLgZ4YFd04bd3ThvmXpGTpUq9JYBLg&index=1)).
 
 ![Vista previa](cad/salida/vista_previa.png)
+![Condensador motorizado](docs/img/condensador_motorizado.png)
 
 ## Resumen del diseño
 
@@ -58,25 +64,54 @@ Tablas completas para loops de 0,8 / 1,0 / 1,2 / 1,6 m en [`resultados/`](result
 | 20 | 269 pF | 277 pF |
 | 30 | 411 pF | 423 pF |
 
+## Autoajuste motorizado
+
+| | |
+|---|---|
+| Motor | NEMA17 + reductora planetaria 27:1 + TMC2209 a 1/16 → **240 pasos/grado** (0,17 kHz/paso en 40 m) |
+| Referencia | Sensor Hall A3144 + imán en el acoplamiento aislante (home = Cmin) |
+| Medida | Puente de ROE tipo Bruene (FT50-43) → ADC del ESP32 |
+| Control | ESP32: 4 pulsadores, OLED, WiFi con página web, puerto serie, memoria por banda |
+| Algoritmo | Barrido grueso → fino → paso a paso, aproximación siempre en el mismo sentido (anula la holgura) |
+
+![Cableado](docs/img/cableado.png)
+
+### Piezas impresas en 3D
+
+![Piezas 3D](cad/3d/piezas_3d.png)
+
+Tapas del condensador, acoplamiento aislante, cuna del motor, soporte del Hall, unión con el mástil,
+cruceta del loop, soporte y clip del lazo de acoplo, y cajas del controlador y del puente de ROE.
+Detalle y ajustes de impresión: [`cad/3d/PIEZAS.md`](cad/3d/PIEZAS.md).
+
 ## Estructura del repositorio
 
 ```
-calc/modelo.py           Modelo físico (condensador + loop)
-calc/calcular_todo.py    Genera todas las tablas y gráficas en resultados/
-cad/generar_planos.py    Genera DXF (corte láser), SVG y vista previa en cad/salida/
-cad/salida/              rotor.dxf · estator.dxf · tapa.dxf (+ .svg) · vista_previa.png
-resultados/              Tablas .md/.csv, lista de materiales, gráficas .png
-docs/formulas.md         Todas las fórmulas explicadas
-docs/montaje.md          Montaje paso a paso, ajuste y seguridad
+calc/modelo.py             Modelo físico (condensador + loop)
+calc/calcular_todo.py      Tablas y gráficas en resultados/
+cad/generar_planos.py      DXF de corte láser, SVG y vista previa en cad/salida/
+cad/generar_3d.py          parametros.scad → STL + PNG (cad/3d/) + posiciones del motor + firmware/bandas.h
+cad/generar_esquemas.py    Esquemas de conjunto y cableado (docs/img/)
+cad/3d/scad/               Fuentes OpenSCAD paramétricos
+cad/3d/stl/                STL listos para imprimir
+firmware/autotune_loop/    Firmware ESP32 (Arduino)
+firmware/test/             Simulación del autoajuste en el PC
+resultados/                Tablas .md/.csv, lista de materiales, posiciones del motor, gráficas
+docs/guia_paso_a_paso.md   ⭐ Guía completa de construcción con todos los datos
+docs/montaje.md            Montaje detallado del condensador
+docs/formulas.md           Fórmulas explicadas
 docs/materiales_murcia.md  Dónde comprar cada cosa en Murcia
 ```
 
 ## Cómo recalcular para tu loop
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt          # y OpenSCAD instalado para los STL
 python calc/calcular_todo.py --diametro 1.2 --tubo 22 --potencia 100
 python cad/generar_planos.py
+python cad/generar_3d.py --version B --diametro 1.2
+python cad/generar_esquemas.py
+sh firmware/test/simular.sh              # opcional: prueba del autoajuste
 ```
 
 Para cambiar la geometría de las placas edita `GeometriaPlacas` en `calc/modelo.py`
@@ -84,9 +119,9 @@ y vuelve a ejecutar ambos scripts (los DXF se regeneran solos).
 
 ## Materiales (resumen)
 
-Placas de aluminio 1 mm por corte láser · 2 tapas de policarbonato/metacrilato 8–10 mm ·
-varilla roscada M5 inox + tuercas DIN 934 + arandelas DIN 125 inox · 2 rodamientos 608ZZ o casquillos ·
-acoplamiento aislante · reductora 6:1 o motorreductor 1–5 rpm · tubo de cobre 22 mm + 7 codos de 45° ·
+Placas de aluminio 1 mm por corte láser · 2 tapas impresas en PETG/ASA (o policarbonato por láser) ·
+varilla roscada M5 inox + tuercas DIN 934 + arandelas DIN 125 inox · 2 rodamientos 625ZZ ·
+acoplamiento aislante impreso · NEMA17 con reductora 27:1 + TMC2209 + ESP32 · tubo de cobre 22 mm + 8 codos de 45° ·
 pletina de cobre · coaxial y conector.
 Cantidades exactas: [`resultados/lista_materiales.md`](resultados/lista_materiales.md) ·
 Tiendas y talleres en Murcia: [`docs/materiales_murcia.md`](docs/materiales_murcia.md).

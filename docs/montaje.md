@@ -60,8 +60,8 @@ guantes (los cantos del aluminio cortan).
   10 cm mínimo).
 - Manual: **reductora planetaria 6:1** o **dial vernier** (180° de recorrido, suficiente porque la
   mariposa va de Cmax a Cmin en 90°).
-- Remoto: motorreductor 12 V de **1–5 rpm** (el ancho de banda en 40 m es de solo ~5 kHz; hace falta ir muy
-  lento) con dos pulsadores o un controlador con Arduino + driver.
+- Remoto con autoajuste (recomendado): NEMA17 + reductora 27:1 + ESP32, piezas impresas y firmware de este
+  repositorio. Ver [guía paso a paso](guia_paso_a_paso.md).
 
 ## 7. Conexión al loop
 

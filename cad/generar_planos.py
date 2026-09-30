@@ -69,7 +69,7 @@ def estator(ang_centro=0.0):
 def tapa(lado=240.0, esquina=10.0):
     h = lado / 2
     forma = redondear(Polygon([(-h, -h), (h, -h), (h, h), (-h, h)]), 8)
-    pts = [(0, 0, 8.2)]                                   # eje (casquillo/rodamiento 8 mm o M5+casquillo)
+    pts = [(0, 0, 16.1)]                                  # rodamiento 625ZZ (5x16x5) a presión / pegado
     pts += [(x, y, AGUJERO_M5) for x, y in varillas_estator(0) + varillas_estator(180)]
     c = h - esquina
     pts += [(sx * c, sy * c, 6.5) for sx in (-1, 1) for sy in (-1, 1)]   # 4 tirantes M6 de nylon/fibra
@@ -125,7 +125,7 @@ def main():
     a_dxf(est, "estator", ["ESTATOR - aluminio 1 mm - cortar 2x(juegos) unidades",
                            f"R int {G.r_stator_int} / R ext {G.r_stator_ext}; varillas M5 a R{G.r_varillas} +-{ANG_VARILLAS} grados"])
     a_dxf(tap, "tapa", ["TAPA / PLACA FINAL - policarbonato o metacrilato 8-10 mm (2 uds)",
-                        "Centro 8,2 mm (casquillo o rodamiento 608 con eje 8 mm) / varillas 5,3 / tirantes 6,5"])
+                        "Centro 16,1 mm (rodamiento 625ZZ, eje M5) / varillas 5,3 / tirantes 6,5"])
     for p, n in ((rot, "rotor"), (est, "estator"), (tap, "tapa")):
         a_svg(p, n)
 

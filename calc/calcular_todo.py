@@ -139,7 +139,7 @@ def materiales(resumen):
          lambda g, n, c: f"{(n-1)*a_rot + 2*n*a_est:.0f}")
     fila("Tapas / placas finales", "Policarbonato o metacrilato 8–10 mm, 240×240, tapa.dxf", lambda g, n, c: 2)
     fila("Varilla roscada M5 estátor", "Inox A2 DIN 975, 4 tramos de (mm)", lambda g, n, c: f"4 × {c.longitud_pack_mm + 90:.0f}")
-    fila("Eje del rotor", "Varilla M5 inox (o eje 8 mm + casquillo), mm", lambda g, n, c: f"1 × {c.longitud_pack_mm + 160:.0f}")
+    fila("Eje del rotor", "Varilla M5 inox (o eje liso de 5 mm), mm", lambda g, n, c: f"1 × {c.longitud_pack_mm + 160:.0f}")
     fila("Separadores estátor", f"de {'/'.join(str(v) for v in RECETA)} mm según versión (ver receta)", lambda g, n, c: 4 * (n - 1))
     fila("Separadores rotor", "misma longitud, en el eje central", lambda g, n, c: n - 2)
     fila("Tuercas M5 DIN 934 inox", "incluye las de los separadores + 20 de fijación",
@@ -147,7 +147,7 @@ def materiales(resumen):
     fila("Arandelas M5 DIN 125 inox", "incluye separadores + 20", lambda g, n, c: _arandelas(c, n) + 20)
     fila("Collarines / anillos de bloqueo 5 mm", "para fijar el rotor en el eje", lambda g, n, c: 2)
     fila("Tirantes entre tapas", "Varilla M6 nylon o fibra de vidrio + tuercas nylon", lambda g, n, c: 4)
-    fila("Rodamiento 608ZZ o casquillo de bronce/teflón", "para el eje en las tapas", lambda g, n, c: 2)
+    fila("Rodamiento 625ZZ (5×16×5 mm)", "para el eje M5 en las tapas", lambda g, n, c: 2)
     fila("Acoplamiento aislante", "manguito de nylon/PVC o acoplador flexible + tramo de varilla de fibra", lambda g, n, c: 1)
     fila("Reductora", "planetaria 6:1 (manual) o motorreductor 12 V 1–5 rpm", lambda g, n, c: 1)
     fila("Pletina/malla de cobre", "cinta 20–25 mm o malla de coaxial para unir estátores al loop", lambda g, n, c: "2 × 20 cm")

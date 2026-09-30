@@ -63,7 +63,7 @@ Alternativa más limpia: **tubo de aluminio 8×1 mm** cortado a medida (tornero 
 
 ## 4. Tubo de cobre para el loop
 
-- **Tubo de cobre 22 mm** (barra 2,5 m, rígido) + **7 codos de 45°** de soldar para hacer un octógono de 1 m:
+- **Tubo de cobre 22 mm** (barra 2,5 m, rígido) + **8 codos de 45°** de soldar para hacer un octógono de 1 m:
   Obramat Murcia (barra 22 mm 2,5 m: https://www.obramat.es/barra-cobre-o22mm-2-5m-10424911.html),
   Leroy Merlin, BigMat, almacenes de fontanería.
 - Para el octógono de Ø 1 m necesitas **3,14 m** de perímetro → 8 tramos de ≈ 39 cm → **2 barras de 2,5 m**.

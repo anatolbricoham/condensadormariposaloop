@@ -1,0 +1,24 @@
+# Lista de materiales del condensador
+
+Cantidades por versión. Los separadores de tuerca+arandela son la opción más fácil de comprar en Murcia; el tubo de aluminio (Ø 8×1 mm) cortado a medida queda más limpio.
+
+| Pieza | Especificación | A · QRP / portable | B · 50 W | C · 100 W |
+|---|---|---|---|---|
+| Placa rotor (corte láser) | Aluminio 1 mm (EN AW-1050/5754), rotor.dxf | 15 | 21 | 26 |
+| Placa estátor (corte láser) | Aluminio 1 mm, estator.dxf | 32 | 44 | 54 |
+| Placas de repuesto (+10 %) |  | 5 | 7 | 8 |
+| Superficie de aluminio neta | cm² (pide chapa 1000×500 mm o que el taller ponga el material) | 3922 | 5431 | 6689 |
+| Tapas / placas finales | Policarbonato o metacrilato 8–10 mm, 240×240, tapa.dxf | 2 | 2 | 2 |
+| Varilla roscada M5 estátor | Inox A2 DIN 975, 4 tramos de (mm) | 4 × 196 | 4 × 280 | 4 × 377 |
+| Eje del rotor | Varilla M5 inox (o eje 8 mm + casquillo), mm | 1 × 266 | 1 × 350 | 1 × 447 |
+| Separadores estátor | de 7/9/11/13 mm según versión (ver receta) | 60 | 84 | 104 |
+| Separadores rotor | misma longitud, en el eje central | 14 | 20 | 25 |
+| Tuercas M5 DIN 934 inox | incluye las de los separadores + 20 de fijación | 94 | 228 | 278 |
+| Arandelas M5 DIN 125 inox | incluye separadores + 20 | 242 | 124 | 407 |
+| Collarines / anillos de bloqueo 5 mm | para fijar el rotor en el eje | 2 | 2 | 2 |
+| Tirantes entre tapas | Varilla M6 nylon o fibra de vidrio + tuercas nylon | 4 | 4 | 4 |
+| Rodamiento 608ZZ o casquillo de bronce/teflón | para el eje en las tapas | 2 | 2 | 2 |
+| Acoplamiento aislante | manguito de nylon/PVC o acoplador flexible + tramo de varilla de fibra | 1 | 1 | 1 |
+| Reductora | planetaria 6:1 (manual) o motorreductor 12 V 1–5 rpm | 1 | 1 | 1 |
+| Pletina/malla de cobre | cinta 20–25 mm o malla de coaxial para unir estátores al loop | 2 × 20 cm | 2 × 20 cm | 2 × 20 cm |
+| Terminales de cobre | para crimpar 10–16 mm², ojal M5 | 4 | 4 | 4 |

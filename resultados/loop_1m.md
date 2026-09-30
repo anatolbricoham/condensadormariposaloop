@@ -1,0 +1,17 @@
+# Loop magnético Ø 1.0 m – 22 mm – 100 W
+
+Loop circular (u octogonal equivalente) de **1.0 m de diámetro** (perímetro 3.14 m) en tubo de cobre de **22 mm**. Capacidad parásita estimada 2.6 pF (ya restada). Resistencia extra de uniones/soldaduras 5 mΩ. Lazo de acoplo recomendado: Ø 20 cm.
+
+⚠️ La tensión en el condensador es la de un loop perfectamente adaptado: con 100 W aparecen varios kV. No toques el loop transmitiendo.
+
+| Banda | f (MHz) | L (µH) | C necesaria (pF) | R rad (mΩ) | R pérd (mΩ) | Eficiencia | Q cargado | Ancho banda (kHz) | I loop (A) | V cond @100 W (V rms) | V pico |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 80 m | 3.65 | 2.45 | 774 | 0.42 | 27.6 | 1.5 % (-18.2 dB) | 1001 | 3.6 | 59.7 | 3352 | 4741 |
+| 60 m | 5.36 | 2.45 | 358 | 1.96 | 32.4 | 5.7 % (-12.4 dB) | 1199 | 4.5 | 53.9 | 4446 | 6288 |
+| 40 m | 7.1 | 2.45 | 203 | 6.05 | 36.6 | 14.2 % (-8.5 dB) | 1281 | 5.5 | 48.4 | 5291 | 7482 |
+| 30 m | 10.12 | 2.45 | 98 | 24.97 | 42.7 | 36.9 % (-4.3 dB) | 1151 | 8.8 | 38.4 | 5985 | 8464 |
+| 20 m | 14.2 | 2.45 | 49 | 96.78 | 49.6 | 66.1 % (-1.8 dB) | 746 | 19.0 | 26.1 | 5708 | 8072 |
+| 17 m | 18.12 | 2.45 | 29 | 256.61 | 55.4 | 82.2 % (-0.8 dB) | 447 | 40.6 | 17.9 | 4989 | 7056 |
+| 15 m | 21.2 | 2.45 | 20 | 480.83 | 59.5 | 89.0 % (-0.5 dB) | 302 | 70.3 | 13.6 | 4436 | 6273 |
+| 12 m | 24.94 | 2.45 | 14 | 920.94 | 64.2 | 93.5 % (-0.3 dB) | 195 | 128.1 | 10.1 | 3865 | 5466 |
+| 10 m | 28.5 | 2.45 | 10 | 1570.46 | 68.2 | 95.8 % (-0.2 dB) | 134 | 213.1 | 7.8 | 3424 | 4843 |
